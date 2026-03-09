@@ -1,0 +1,120 @@
+/* ============================================================
+   ROADMAP — ESTILOS GLOBALES
+   ============================================================ */
+
+:root {
+  --bg:         #0d0f14;
+  --bg2:        #13161e;
+  --bg3:        #1a1e28;
+  --border:     #252a38;
+  --border2:    #2e3548;
+  --text:       #e8eaf2;
+  --text-muted: #6b7394;
+  --text-dim:   #3f4663;
+  --accent:     #f0c040;
+  --accent2:    #e8855a;
+  --accent3:    #5ad4e8;
+  --green:      #4ecb8d;
+  --yellow:     #f0c040;
+  --gray:       #555e7a;
+  --fix:        #e85a5a;
+  --feat:       #5a9be8;
+  --upgrade:    #9b5ae8;
+  --critica:    #e85a5a;
+  --importante: #f0c040;
+  --mejora:     #4ecb8d;
+  --radius:     6px;
+  --radius-lg:  10px;
+  --font-mono:  'IBM Plex Mono', monospace;
+  --font-title: 'Syne', sans-serif;
+  --sidebar-w:  290px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  overflow: hidden;
+}
+
+button { cursor: pointer; font-family: var(--font-mono); }
+a { color: inherit; text-decoration: none; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-dim); }
+
+/* Animaciones base */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(16px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Botones globales */
+.btn-primary {
+  background: var(--accent);
+  color: #000;
+  border: none;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 12px;
+  padding: 9px 16px;
+  border-radius: var(--radius);
+  transition: opacity 0.15s, transform 0.1s;
+  letter-spacing: 0.5px;
+  width: 100%;
+}
+.btn-primary:hover { opacity: 0.88; }
+.btn-primary:active { transform: scale(0.98); }
+
+.btn-ghost {
+  background: none;
+  border: 1px solid var(--border2);
+  color: var(--text-muted);
+  font-size: 12px;
+  padding: 9px 16px;
+  border-radius: var(--radius);
+  transition: all 0.15s;
+}
+.btn-ghost:hover { border-color: var(--text-muted); color: var(--text); }
+
+.btn-danger {
+  background: rgba(232,90,90,0.12);
+  border: 1px solid rgba(232,90,90,0.35);
+  color: var(--fix);
+  font-size: 12px;
+  padding: 9px 16px;
+  border-radius: var(--radius);
+  transition: all 0.15s;
+}
+.btn-danger:hover { background: rgba(232,90,90,0.22); }
+
+.btn-icon {
+  background: none;
+  border: 1px solid var(--border2);
+  color: var(--text-muted);
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: var(--radius);
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.btn-icon:hover { color: var(--text); border-color: var(--accent); }
+.btn-icon.delete:hover { color: var(--fix); border-color: var(--fix); }

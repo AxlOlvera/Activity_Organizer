@@ -1,0 +1,127 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* KPIs */
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.kpi {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  animation: cardIn 0.3s ease both;
+  transition: border-color 0.2s;
+}
+.kpi:hover { border-color: var(--border2); }
+
+.kpiValue {
+  font-family: var(--font-title);
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.kpiLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+
+.kpiSub { font-size: 10px; color: var(--text-muted); }
+
+/* Rows */
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Chart card */
+.chartCard {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  animation: cardIn 0.35s ease both;
+  transition: border-color 0.2s;
+}
+.chartCard:hover { border-color: var(--border2); }
+
+.chartHeader { margin-bottom: 16px; }
+
+.chartTitle {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.chartSub { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.table th {
+  text-align: left;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.table td {
+  padding: 10px 10px;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.table tr:last-child td { border-bottom: none; }
+.table tr:hover td { background: rgba(255,255,255,0.02); }
+.table td:first-child { color: var(--text); }
+
+/* Mini progress bar en tabla */
+.miniBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.miniBar > div {
+  flex: 1;
+  height: 4px;
+  background: var(--bg3);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.miniBarFill {
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--accent3), var(--feat));
+  transition: width 0.4s ease;
+}
+
+.miniBar span { font-size: 10px; color: var(--text-muted); white-space: nowrap; min-width: 28px; }
+
+/* Responsive mínimo */
+@media (max-width: 900px) {
+  .kpis { grid-template-columns: repeat(2, 1fr); }
+  .row2  { grid-template-columns: 1fr; }
+}

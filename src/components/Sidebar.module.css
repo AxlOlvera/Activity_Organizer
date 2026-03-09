@@ -1,0 +1,184 @@
+.sidebar {
+  width: var(--sidebar-w);
+  min-width: var(--sidebar-w);
+  background: var(--bg2);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.header {
+  padding: 20px 18px 16px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.logo { display: flex; align-items: center; gap: 12px; }
+
+.logoIcon { font-size: 24px; color: var(--accent); line-height: 1; }
+
+.logoTitle {
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 3px;
+}
+
+.logoSub { font-size: 10px; color: var(--text-muted); letter-spacing: 1px; }
+
+/* Progreso */
+.progressBox {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.progressLabel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.pct { color: var(--accent); font-size: 13px; }
+
+.progressCounts { font-size: 11px; color: var(--text-dim); margin-top: 5px; }
+
+/* Secciones */
+.section {
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.sectionLabel {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.resetBtn {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--accent3);
+  letter-spacing: 0.5px;
+  text-transform: none;
+  background: rgba(90,212,232,0.1);
+  border: 1px solid rgba(90,212,232,0.25);
+  padding: 2px 7px;
+  border-radius: 99px;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.resetBtn:hover {
+  background: rgba(90,212,232,0.22);
+  color: var(--accent3);
+}
+
+.btnGroup { display: flex; gap: 6px; }
+
+.viewBtn {
+  flex: 1;
+  background: none;
+  border: 1px solid var(--border2);
+  color: var(--text-muted);
+  font-size: 11px;
+  padding: 6px 8px;
+  border-radius: var(--radius);
+  transition: all 0.15s;
+}
+
+.viewBtn:hover { background: var(--bg3); color: var(--text); }
+.viewBtn.active { background: var(--bg3); border-color: var(--accent); color: var(--accent); font-weight: 600; }
+
+/* Filtros */
+.filterBtn {
+  display: block;
+  width: 100%;
+  background: none;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  font-size: 11px;
+  padding: 5px 8px;
+  border-radius: var(--radius);
+  text-align: left;
+  transition: all 0.15s;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.filterBtn:hover { background: var(--bg3); color: var(--text); border-color: var(--border2); }
+.filterBtn.active { background: var(--bg3); border-color: var(--accent); color: var(--accent); font-weight: 600; }
+
+/* Módulos */
+.moduleBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  background: none;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  font-size: 11px;
+  padding: 6px 8px;
+  border-radius: var(--radius);
+  text-align: left;
+  transition: all 0.15s;
+  margin-bottom: 2px;
+}
+
+.moduleBtn:hover { background: var(--bg3); color: var(--text); border-color: var(--border2); }
+.moduleBtn.active { background: var(--bg3); border-color: var(--accent); color: var(--accent); }
+
+.modName { flex: 1; font-size: 11px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.modCount {
+  font-size: 10px;
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  color: var(--text-muted);
+  padding: 1px 6px;
+  border-radius: 99px;
+  flex-shrink: 0;
+}
+
+/* Integrantes */
+.integrantes { display: flex; flex-direction: column; gap: 2px; }
+
+.integranteLink {
+  display: block;
+  font-size: 11px;
+  color: var(--text-muted);
+  padding: 5px 8px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: all 0.15s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.integranteLink:hover { background: var(--bg3); color: var(--text); border-color: var(--border2); }
+.integranteLink.active { background: var(--bg3); border-color: var(--accent3); color: var(--accent3); font-weight: 600; }
+
+/* Footer */
+.footer {
+  padding: 14px 18px;
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
