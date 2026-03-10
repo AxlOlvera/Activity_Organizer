@@ -1,17 +1,7 @@
-// ============================================================
-// FIREBASE CONFIG
-// ============================================================
-// INSTRUCCIONES:
-// 1. Ve a https://console.firebase.google.com
-// 2. Crea un proyecto (o usa uno existente)
-// 3. Ve a Project Settings → General → Your apps → Add app (Web)
-// 4. Copia tu firebaseConfig y pégalo aquí
-// 5. En Firebase Console, habilita Firestore Database
-//    (modo "test" para empezar, después agregar reglas de seguridad)
-// ============================================================
 
 import { initializeApp } from 'firebase/app'
 import { getFirestore, collection, getDocs, doc, setDoc, deleteDoc, onSnapshot, writeBatch } from 'firebase/firestore'
+import { getAuth, GoogleAuthProvider } from 'firebase/auth'
 
 const firebaseConfig = {
   apiKey: "AIzaSyDXsKlj-FtBvsSXAYCnLwxAPnYY83CP3Ps",
@@ -24,7 +14,10 @@ const firebaseConfig = {
 }
 
 const app = initializeApp(firebaseConfig)
+
 export const db = getFirestore(app)
+export const auth = getAuth(app)
+export const googleProvider = new GoogleAuthProvider()
 
 // ============================================================
 // HELPERS DE FIRESTORE
