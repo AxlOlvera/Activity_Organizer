@@ -5,13 +5,15 @@ import Dashboard from './pages/Dashboard'
 import Login from './components/Login'
 import Loading from './components/Loading'
 
-export default function App() {
-  const { user, loading } = useAuth()
+function DashboardWrapper({ actualizarTarea, borrarTarea, tareas }) {
+  return <Dashboard tareas={tareas} actualizarTarea={actualizarTarea} borrarTarea={borrarTarea} />
+}
+
+function AppAutenticada() {
   const { tareas, cargando, error, actualizarTarea, borrarTarea } = useTareas()
 
-  if (loading || cargando) return <Loading />
-  if (!user) return <Login />
-  if (error)  return <div style={{color:'red', padding:'2rem'}}>Error: {error}</div>
+  if (cargando) return <Loading />
+  if (error) return <div style={{color:'red', padding:'2rem'}}>Error: {error}</div>
 
   return (
     <Routes>
@@ -20,4 +22,13 @@ export default function App() {
       <Route path="*"        element={<Navigate to="/" />} />
     </Routes>
   )
+}
+
+export default function App() {
+  const { user, loading } = useAuth()
+
+  if (loading) return <Loading />
+  if (!user)   return <Login />
+
+  return <AppAutenticada />
 }
